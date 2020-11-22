@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" fullscreen>
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-text><b>Számold ki mennyi szén-dioxid jutott a levegőbe az utazásod során!</b></ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <!--emissziós faktorok : kg CO2/km/utas
+    autó: 0.133,
+    busz: 0.069,
+    villamos/troli: 0.042
+  -->
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Hány kilómétert tett meg autóval?</ion-label>
+      <ion-input id="car-input" type="number" [(ngModel)]="carInput"></ion-input>
+      <ion-button id="button" (click)="carCo2Calculation()">Kiértékel</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="carButtonClicked" class="ion-padding">
+    <ion-text>A kibocsátott szén-dioxid mértéke: {{ calculatedCarData.toFixed(2) }} kg</ion-text>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Hány kilómétert tett meg motorral?</ion-label>
+      <ion-input id="motor-input" type="number" [(ngModel)]="motorInput"></ion-input>
+      <ion-button id="button" (click)="[motorCo2Calculation()]">Kiértékel</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="motorButtonClicked" class="ion-padding">
+    <ion-text>A kibocsátott szén-dioxid mértéke: {{ calculatedMotorData.toFixed(2) }} kg</ion-text>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Hány kilómétert tett meg busszal?</ion-label>
+      <ion-input id="bus-input" type="number" [(ngModel)]="busInput"></ion-input>
+      <ion-button (click)="busCo2Calculation()">Kiértékel</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="busButtonClicked" class="ion-padding">
+    <ion-text>Kibocsátott szén-dioxid: {{ calculatedBusData.toFixed(2) }} kg</ion-text>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-label>Hány kilómétert tett meg villamossal/trolival?</ion-label>
+      <ion-input id="tram-input" type="number" [(ngModel)]="tramInput"></ion-input>
+      <ion-button (click)="tramCo2Calculation()">Kiértékel</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="tramButtonClicked" class="ion-padding">
+    <ion-text>Kibocsátott szén-dioxid: {{ calculatedTramData.toFixed(2) }} kg</ion-text>
+  </ion-card>
+
+  <!--22kg co2-t dolgoz fel évente egy átlagos fa-->
+
+</ion-content>

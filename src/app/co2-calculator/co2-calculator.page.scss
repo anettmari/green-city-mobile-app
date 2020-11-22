@@ -1,0 +1,12 @@
+ion-content.background{
+    --background: url(../../assets/image/hatterkep3.png) no-repeat;
+}
+
+ion-toolbar {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+}
+
+ion-card ion-button{
+    --background: #a19f9f;
+}

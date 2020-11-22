@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" fullscreen>
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-text><b>Lészennyezettségi adatok Szegedre vonatkozóan:</b></ion-text>
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-center">
+      <ion-text>A színes jelmagyarázatokra kattintva eltűntetheted, illetve megjelenítheted az adatokat.</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Vegyjel kisokos</ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row><ion-col>Co: Szén-monoxid</ion-col></ion-row>
+        <ion-row><ion-col>So<sub>2</sub>: Kén-dioxid</ion-col></ion-row>
+        <ion-row><ion-col>No<sub>2</sub>: Nitrogén-dioxid</ion-col></ion-row>
+        <ion-row><ion-col>O<sub>3</sub>: Ózon</ion-col></ion-row>
+        <ion-row><ion-col>PM<sub>2,5</sub>: Szálló por - 2,5 mikronnál kisebb részecskék</ion-col></ion-row>
+        <ion-row><ion-col>PM<sub>10</sub>: Szálló por - 10 mikron átmérőnél kisebb részecskék</ion-col></ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background-color: #a8c5a6;">
+    <ion-card-content class="ion-text-center">
+      <ion-text><b>Vegyi anyagok a levegőben</b></ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <div>
+        <canvas height="300"
+            baseChart
+            [chartType]="'line'"
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [legend]="true"
+            >
+        </canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background-color: #a8c5a6;">
+    <ion-card-content class="ion-text-center">
+      <ion-text><b>Por a levegőben</b></ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <div>
+        <canvas height="300"
+            baseChart
+            [chartType]="'line'"
+            [datasets]="chartData2"
+            [labels]="chartLabels2"
+            [options]="chartOptions2"
+            [legend]="true"
+            >
+        </canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+<!-- <ion-card>
+    <ion-card-content>
+      <p>Hány fa kell...</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <img src="../../../assets/image/eco-friendly.jpg" />
+    </ion-card-content>
+  </ion-card>
+</ion-content>--> 

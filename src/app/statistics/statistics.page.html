@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" fullscreen>
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      <ion-text><b>A forgalom alakulása Szegeden:</b></ion-text>
+      <br>
+      <ion-text>(mérés helye: Belvárosi-híd)</ion-text>
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-center">
+      <ion-text>Válassz az alábbi közlekedési módok közül, majd nézd meg hogyan alakult a forgalom a hónap során.</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="background-color: #a8c5a6;">
+    <ion-card-content>
+      <ion-segment [(ngModel)]="traffic" mode="ios">
+        <ion-segment-button value="pedestrian">
+          <ion-icon name="walk-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="cyclist">
+          <ion-icon name="bicycle-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="public-transport">
+          <ion-icon name="bus-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="car">
+          <ion-icon name="car-outline"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-content>
+  </ion-card>
+
+  <app-pedestrian *ngIf="traffic === 'pedestrian'"></app-pedestrian>
+  <app-cyclist *ngIf="traffic === 'cyclist'"></app-cyclist>
+  <app-public-transport *ngIf="traffic === 'public-transport'"></app-public-transport>
+  <app-car *ngIf="traffic === 'car'"></app-car>
+
+</ion-content>
