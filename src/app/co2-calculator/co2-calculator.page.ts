@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { UserCo2CalculatedDataService } from '../services/user-co2-calculated-data.service';
 
 @Component({
   selector: "app-co2-calculator",
@@ -20,7 +19,7 @@ export class Co2CalculatorPage implements OnInit {
   busButtonClicked: boolean = false;
   tramButtonClicked: boolean = false;
 
-  constructor(userCo2CalculatedData: UserCo2CalculatedDataService) {}
+  constructor() {}
 
   ngOnInit() {}
 
