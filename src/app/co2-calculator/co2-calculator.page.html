@@ -7,9 +7,9 @@
 </ion-header>
 
 <ion-content class="background" fullscreen>
-  <ion-card>
+  <ion-card style="background-color: #b4cab7;">
     <ion-card-content class="ion-text-center">
-      <ion-text><b>Számold ki mennyi szén-dioxid jutott a levegőbe az utazásod során!</b></ion-text>
+      <ion-text><b>Számítsd ki mennyi szén-dioxid jutott a levegőbe az utazásod során!</b></ion-text>
     </ion-card-content>
   </ion-card>
 
@@ -19,54 +19,78 @@
     villamos/troli: 0.042
   -->
 
+    <!--22kg CO2-t dolgoz fel évente egy átlagos fa
+    22kg -> 365 nap
+    0,06kg -> 1 nap
+
+    treeNeeded = kibocsátott szén-dioxid (kg) / 0,06kg
+    -->
+
   <ion-card>
     <ion-card-content>
       <ion-label>Hány kilómétert tett meg autóval?</ion-label>
+      <hr>
       <ion-input id="car-input" type="number" [(ngModel)]="carInput"></ion-input>
       <ion-button id="button" (click)="carCo2Calculation()">Kiértékel</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="carButtonClicked" class="ion-padding">
-    <ion-text>A kibocsátott szén-dioxid mértéke: {{ calculatedCarData.toFixed(2) }} kg</ion-text>
+  <ion-card *ngIf="carButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>A kibocsátott szén-dioxid mértéke: {{ calculatedCarData.toFixed(2) }} kg</b></ion-text>
+  </ion-card>
+
+  <ion-card *ngIf="carButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Ennyi fa tudja lekötni a kibocsátott szén-dioxidot: {{ treeNeededCarInput.toFixed(0) }} db</b></ion-text>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
       <ion-label>Hány kilómétert tett meg motorral?</ion-label>
+      <hr>
       <ion-input id="motor-input" type="number" [(ngModel)]="motorInput"></ion-input>
       <ion-button id="button" (click)="[motorCo2Calculation()]">Kiértékel</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="motorButtonClicked" class="ion-padding">
-    <ion-text>A kibocsátott szén-dioxid mértéke: {{ calculatedMotorData.toFixed(2) }} kg</ion-text>
+  <ion-card *ngIf="motorButtonClicked" class="ion-padding calculatedDataStyle" >
+    <ion-text><b>A kibocsátott szén-dioxid mértéke: {{ calculatedMotorData.toFixed(2) }} kg</b></ion-text>
+  </ion-card>
+
+  <ion-card *ngIf="motorButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Ennyi fa tudja lekötni a kibocsátott szén-dioxidot: {{ treeNeededMotorInput.toFixed(0) }} db</b></ion-text>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
       <ion-label>Hány kilómétert tett meg busszal?</ion-label>
+      <hr>
       <ion-input id="bus-input" type="number" [(ngModel)]="busInput"></ion-input>
       <ion-button (click)="busCo2Calculation()">Kiértékel</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="busButtonClicked" class="ion-padding">
-    <ion-text>Kibocsátott szén-dioxid: {{ calculatedBusData.toFixed(2) }} kg</ion-text>
+  <ion-card *ngIf="busButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Kibocsátott szén-dioxid: {{ calculatedBusData.toFixed(2) }} kg</b></ion-text>
+  </ion-card>
+
+  <ion-card *ngIf="busButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Ennyi fa tudja lekötni a kibocsátott szén-dioxidot: {{ treeNeededBusInput.toFixed(0) }} db</b></ion-text>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
       <ion-label>Hány kilómétert tett meg villamossal/trolival?</ion-label>
+      <hr>
       <ion-input id="tram-input" type="number" [(ngModel)]="tramInput"></ion-input>
       <ion-button (click)="tramCo2Calculation()">Kiértékel</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="tramButtonClicked" class="ion-padding">
-    <ion-text>Kibocsátott szén-dioxid: {{ calculatedTramData.toFixed(2) }} kg</ion-text>
+  <ion-card *ngIf="tramButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Kibocsátott szén-dioxid: {{ calculatedTramData.toFixed(2) }} kg</b></ion-text>
   </ion-card>
 
-  <!--22kg co2-t dolgoz fel évente egy átlagos fa-->
-
+  <ion-card *ngIf="tramButtonClicked" class="ion-padding calculatedDataStyle">
+    <ion-text><b>Ennyi fa tudja lekötni a kibocsátott szén-dioxidot: {{ treeNeededTramInput.toFixed(0) }} db</b></ion-text>
+  </ion-card>
 </ion-content>

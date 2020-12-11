@@ -53,6 +53,22 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <div>
+        <canvas height="300"
+            baseChart
+            [chartType]="'line'"
+            [datasets]="chartData3"
+            [labels]="chartLabels3"
+            [options]="chartOptions3"
+            [legend]="true"
+            >
+        </canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
   <ion-card style="background-color: #a8c5a6;">
     <ion-card-content class="ion-text-center">
       <ion-text><b>Por a levegőben</b></ion-text>
@@ -74,16 +90,3 @@
       </div>
     </ion-card-content>
   </ion-card>
-
-<!-- <ion-card>
-    <ion-card-content>
-      <p>Hány fa kell...</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
-      <img src="../../../assets/image/eco-friendly.jpg" />
-    </ion-card-content>
-  </ion-card>
-</ion-content>--> 

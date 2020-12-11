@@ -7,16 +7,42 @@
 </ion-header>
 
 <ion-content class="background" fullscreen>
-  <ion-card>
+  <ion-card style="background-color: #b4cab7">
     <ion-card-content class="ion-text-center">
       <ion-text><b>Üdvözöllek a Green'Szeged alkalmazásban!</b></ion-text>
     </ion-card-content>
   </ion-card>
-  
+
   <ion-card>
-    <ion-card-content>Eddig kalkulált kibocsátások:</ion-card-content>
-    <ion-card-content>
-      <ion-text><i>Még nem vittél fel adatot!</i></ion-text>
+    <ion-card-header class="header-text">
+      <ion-text><b>Előzőleg kalkulált kibocsátások:</b></ion-text>
+    </ion-card-header>
+    <hr />
+    <ion-card-content class="ion-text-center">
+      <ion-text *ngIf="!transport"><i>Még nem vittél fel adatot!</i></ion-text>
+      <ion-spinner name="bubbles" *ngIf="loading"></ion-spinner>
+      <ion-grid *ngIf="transport">
+        <ion-row>
+          <ion-col>Autó:</ion-col>
+          <ion-col>{{ transport.car }} km</ion-col>
+          <ion-col>{{calculate(transport.car, 'CAR')}} kg Co<sup>2</sup></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Motor:</ion-col>
+          <ion-col>{{ transport.motor }} km</ion-col>
+          <ion-col>{{calculate(transport.motor, 'MOTOR')}} kg Co<sup>2</sup></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Busz:</ion-col>
+          <ion-col>{{ transport.bus }} km</ion-col>
+          <ion-col>{{calculate(transport.bus, 'BUS')}} kg Co<sup>2</sup></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Villamos:</ion-col>
+          <ion-col>{{ transport.tram }} km</ion-col>
+          <ion-col>{{calculate(transport.tram, 'TRAM')}} kg Co<sup>2</sup></ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 
@@ -35,21 +61,31 @@
         </ion-slide>
 
         <ion-slide>
-          <h2>Egy felnőtt fa körülbelül egy ember éves oxigénszükségletét termeli meg egy vegetációs időszak alatt.</h2>
+          <h2>
+            Egy felnőtt fa körülbelül egy ember éves oxigénszükségletét termeli
+            meg egy vegetációs időszak alatt.
+          </h2>
         </ion-slide>
 
         <ion-slide>
-          <h2>A fák lombtömege képes lekötni a légszennyezõ anyagok egy részét.</h2>
+          <h2>
+            A fák lombtömege képes lekötni a légszennyezõ anyagok egy részét.
+          </h2>
         </ion-slide>
 
         <ion-slide>
-          <h2>A fák elnyelik és asszimilációjuk során felhasználják a szén-dioxidot.</h2>
+          <h2>
+            A fák elnyelik és asszimilációjuk során felhasználják a
+            szén-dioxidot.
+          </h2>
         </ion-slide>
-        
+
         <ion-slide>
-          <h2>Egyetlen fa többet képes hűteni, mint 10 légkondicionáló, napi 20 órán keresztül működtetve.</h2>
+          <h2>
+            Egyetlen fa többet képes hűteni, mint 10 légkondicionáló, napi 20
+            órán keresztül működtetve.
+          </h2>
         </ion-slide>
-        
       </ion-slides>
     </ion-card-content>
   </ion-card>
@@ -58,33 +94,32 @@
     <ion-card-content>
       <ion-slides pager style="padding-bottom: 40px">
         <ion-slide>
-          <img src="../../assets/image/homepage/szinhaz.jpg">
+          <img src="../../assets/image/homepage/szinhaz.jpg" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/dom.JPG">
+          <img src="../../assets/image/homepage/dom.JPG" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/muzeum.jpg">
+          <img src="../../assets/image/homepage/muzeum.jpg" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/viztorony.jpg">
+          <img src="../../assets/image/homepage/viztorony.jpg" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/egyetem.JPG">
+          <img src="../../assets/image/homepage/egyetem.JPG" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/zsinagoga.jpg">
+          <img src="../../assets/image/homepage/zsinagoga.jpg" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/dom2.JPG">
+          <img src="../../assets/image/homepage/dom2.JPG" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/verto.JPG">
+          <img src="../../assets/image/homepage/verto.JPG" />
         </ion-slide>
         <ion-slide>
-          <img src="../../assets/image/homepage/vadaspark.jpg">
+          <img src="../../assets/image/homepage/vadaspark.jpg" />
         </ion-slide>
-        
       </ion-slides>
     </ion-card-content>
   </ion-card>

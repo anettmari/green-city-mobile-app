@@ -4,17 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PublicTransportPageRoutingModule } from './public-transport-routing.module';
+import { BusPageRoutingModule } from './bus-routing.module';
 
-import { PublicTransportPage } from './public-transport.page';
+import { BusPage } from './bus.page';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PublicTransportPageRoutingModule
+    BusPageRoutingModule,
+    ChartsModule
   ],
-  declarations: [PublicTransportPage]
+  declarations: [BusPage]
 })
-export class PublicTransportPageModule {}
+export class BusPageModule {}

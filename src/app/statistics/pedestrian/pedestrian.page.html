@@ -1,10 +1,17 @@
 <ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>Gyalogosok</ion-label>
-  </ion-item>
-
   <ion-card-content>
-    <img src="../../../assets/image/chart1.gif" />
+    <div>
+      <canvas
+        height="300"
+        baseChart
+        [chartType]="'bar'"
+        [colors]="chartColors"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [legend]="true"
+      >
+      </canvas>
+    </div>
   </ion-card-content>
 </ion-card>

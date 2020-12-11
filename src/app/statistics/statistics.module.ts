@@ -9,16 +9,19 @@ import { StatisticsPageRoutingModule } from './statistics-routing.module';
 import { StatisticsPage } from './statistics.page';
 import { PedestrianPage } from './pedestrian/pedestrian.page';
 import { CyclistPage } from './cyclist/cyclist.page';
-import { PublicTransportPage } from './public-transport/public-transport.page';
+import { BusPage } from './bus/bus.page';
 import {  CarPage } from './car/car.page';
+import { ChartsModule } from 'ng2-charts';
+import { TrolleyPage } from './trolley/trolley.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StatisticsPageRoutingModule
+    StatisticsPageRoutingModule,
+    ChartsModule
   ],
-  declarations: [StatisticsPage, PedestrianPage, CyclistPage, PublicTransportPage, CarPage]
+  declarations: [StatisticsPage, PedestrianPage, CyclistPage, BusPage, TrolleyPage, CarPage]
 })
 export class StatisticsPageModule {}

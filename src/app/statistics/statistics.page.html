@@ -29,8 +29,11 @@
         <ion-segment-button value="cyclist">
           <ion-icon name="bicycle-outline"></ion-icon>
         </ion-segment-button>
-        <ion-segment-button value="public-transport">
+        <ion-segment-button value="bus">
           <ion-icon name="bus-outline"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="trolley">
+          <ion-icon name="subway-outline"></ion-icon>
         </ion-segment-button>
         <ion-segment-button value="car">
           <ion-icon name="car-outline"></ion-icon>
@@ -38,10 +41,11 @@
       </ion-segment>
     </ion-card-content>
   </ion-card>
-
+  
   <app-pedestrian *ngIf="traffic === 'pedestrian'"></app-pedestrian>
   <app-cyclist *ngIf="traffic === 'cyclist'"></app-cyclist>
-  <app-public-transport *ngIf="traffic === 'public-transport'"></app-public-transport>
+  <app-bus *ngIf="traffic === 'bus'"></app-bus>
+  <app-trolley *ngIf="traffic === 'trolley'"></app-trolley>
   <app-car *ngIf="traffic === 'car'"></app-car>
-
+  
 </ion-content>

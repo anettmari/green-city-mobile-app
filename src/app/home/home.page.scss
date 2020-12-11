@@ -14,3 +14,15 @@ ion-toolbar {
     vertical-align: super;
 }
 
+hr {
+    height:1px;
+    border-width:0;
+    color:black;
+    background-color:black;
+    width: 80%;
+}
+
+.header-text {
+    padding-bottom: 0;
+    font-size: 1.2em;
+}

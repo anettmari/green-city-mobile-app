@@ -8,5 +8,16 @@ ion-toolbar {
 }
 
 ion-card ion-button{
-    --background: #a19f9f;
+    --background: #999999;
+}
+
+.calculatedDataStyle {
+    background-color: #b4cab7;
+}
+
+hr {
+    height:1px;
+    border-width:0;
+    color:black;
+    background-color:black
 }

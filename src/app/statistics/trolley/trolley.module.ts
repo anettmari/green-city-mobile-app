@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PedestrianPageRoutingModule } from './pedestrian-routing.module';
+import { TrolleyPageRoutingModule } from './trolley-routing.module';
 
-import { PedestrianPage } from './pedestrian.page';
+import { TrolleyPage } from './trolley.page';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { ChartsModule } from 'ng2-charts';
     CommonModule,
     FormsModule,
     IonicModule,
-    PedestrianPageRoutingModule,
+    TrolleyPageRoutingModule,
     ChartsModule
   ],
-  declarations: [PedestrianPage]
+  declarations: [TrolleyPage]
 })
-export class PedestrianPageModule {}
+export class TrolleyPageModule {}

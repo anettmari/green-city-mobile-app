@@ -9,14 +9,17 @@ ion-menu {
   }
   ion-item {
     --background: white !important;
-    --color: black !important;
-    --padding-bottom: 20px;
+    --color: #444444 !important;
+    --padding-bottom: 15px;
     ion-icon {
       padding-right: 10px !important;
     }
   }
+  ion-label {
+    padding-top: 8px;
+  }
   ion-content{
-    --background:white !important;
+    --background: white !important;
     --color: black !important;
   }
 }
